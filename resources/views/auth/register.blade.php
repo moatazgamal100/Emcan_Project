@@ -7,7 +7,7 @@
 </head>
 <body class="bg-light">
     <div class="w-100 vh-100 position-relative mt-5 p-5">
-        <form class="bg-white shadow  w-25 mx-auto p-3 rounded-4" method="POST" action="{{ route('register') }}">
+        <form class="bg-white shadow  w-50 mx-auto p-3 px-5 rounded-4" method="POST" action="{{ route('register') }}">
             @csrf
             <h1 class=" mb-3">Register</h1>
             <div>
