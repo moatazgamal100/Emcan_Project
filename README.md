@@ -4,7 +4,7 @@ I developed an Learning Management System leveraging the Laravel framework and a
 
 
 
-Here are screenshots that show the Candella E-commerce application in use.
+Here are screenshots that show the Learning Management System application in use.
 
 **Sign Up**
 ![Sign Up](/images/register.png?raw=true "Sign Up")
