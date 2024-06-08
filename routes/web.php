@@ -32,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('courses.edit');
     Route::put('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
     Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
+    Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
+    Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('contact.submit');
 });
-Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
-Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('contact.submit');
-// Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
