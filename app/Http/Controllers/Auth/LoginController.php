@@ -20,19 +20,13 @@ class LoginController extends Controller
     }
 
 
-    public function showLoginForm()
-    {
-        return view('auth.login');
-    }
-
-
     public function login(LoginRequest $request)
     {
         $credentials = $request->validated();
+        $token = $this->authService->login($credentials);
 
-        if ($this->authService->login($credentials)) {
-            $request->session()->regenerate();
-            return redirect('courses');
+        if ($token) {
+            return response()->json(['message' => 'Login successful', 'token' => $token], 200);
         }
 
         $this->loginFailResponse();
@@ -45,7 +39,7 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return response()->json(['message' => 'Logout successful'], 200);
     }
 }
 

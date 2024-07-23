@@ -10,7 +10,9 @@ class AuthService
     public function login(array $credentials)
     {
         if (Auth::attempt($credentials)) {
-            return true;
+            $user = Auth::user();
+            $token = $user->createToken('authToken')->plainTextToken;
+            return $token;
         }
         return false;
     }
